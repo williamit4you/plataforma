@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Award, BookOpen, Brain, CreditCard, Flame, GraduationCap, LayoutDashboard, Search, Settings } from "lucide-react";
+import { Award, BookOpen, Brain, CreditCard, Flame, GraduationCap, LayoutDashboard, Search, Settings, Upload } from "lucide-react";
 import { requireUser } from "@/lib/permissions";
 
 const studentLinks = [
@@ -16,6 +16,7 @@ const adminLinks = [
   { href: "/admin", label: "Admin", icon: Settings },
   { href: "/admin/users", label: "Usuarios", icon: LayoutDashboard },
   { href: "/admin/courses", label: "Cursos", icon: BookOpen },
+  { href: "/admin/import", label: "Importar IA", icon: Upload },
   { href: "/admin/payments", label: "Pagamentos", icon: CreditCard },
 ];
 

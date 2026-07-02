@@ -1,0 +1,211 @@
+{
+  "course": {
+    "title": "Google Ads do Zero ao Primeiro Anuncio",
+    "slug": "google-ads-do-zero-ao-primeiro-anuncio",
+    "description": "Curso pratico para sair do zero, estruturar uma conta, escolher palavras-chave e publicar a primeira campanha de pesquisa com medicao basica.",
+    "level": "Iniciante",
+    "workloadHours": 18,
+    "priceCents": 6990,
+    "status": "PUBLISHED"
+  },
+  "modules": [
+    {
+      "title": "Fundamentos e planejamento",
+      "slug": "fundamentos-e-planejamento",
+      "order": 1,
+      "lessons": [
+        {
+          "title": "Como o Google Ads funciona",
+          "slug": "como-o-google-ads-funciona",
+          "description": "Entenda leilao, intencao de busca e o papel do anuncio no funil.",
+          "objectives": ["Entender o leilao", "Diferenciar busca ativa de interrupcao", "Definir uma meta simples"],
+          "readingMinutes": 10,
+          "difficulty": "Basico",
+          "order": 1,
+          "contentMd": "# Como o Google Ads funciona\n\n## Objetivos\n\n- Entender por que o Google Ads captura demanda existente.\n- Compreender a relacao entre palavra-chave, anuncio e pagina.\n- Definir uma meta simples para a primeira campanha.\n\n## Conteudo\n\nGoogle Ads funciona como um sistema de leilao. Quando alguem pesquisa uma palavra-chave, o Google avalia quais anunciantes querem aparecer, quanto estao dispostos a pagar e qual experiencia oferecem ao usuario.\n\nO ponto central nao e apenas pagar mais. Uma campanha saudavel combina intencao de busca, anuncio claro, pagina coerente e medicao.\n\n## Passo a passo\n\n1. Escolha um produto ou servico especifico.\n2. Escreva qual acao voce espera do usuario.\n3. Liste termos que alguem pesquisaria quando ja esta interessado.\n4. Pense em uma promessa simples para o anuncio.\n5. Confira se a pagina entrega exatamente o que foi prometido.\n\n## Checklist\n\n- Produto ou servico definido.\n- Acao principal definida.\n- Termos de busca iniciais listados.\n- Pagina coerente com o anuncio.\n- Conversao planejada.\n\n## Resumo\n\nGoogle Ads e melhor quando existe intencao clara. Antes de configurar botoes, defina objetivo, busca, anuncio, pagina e medicao.",
+          "quiz": {
+            "title": "Quiz rapido",
+            "questions": [
+              {
+                "prompt": "O que o Google Ads avalia no leilao?",
+                "explanation": "O leilao combina lance, relevancia e experiencia esperada.",
+                "answers": [
+                  { "text": "Apenas quem paga mais", "isCorrect": false },
+                  { "text": "Lance, relevancia e experiencia", "isCorrect": true },
+                  { "text": "Somente o tamanho da empresa", "isCorrect": false }
+                ]
+              },
+              {
+                "prompt": "Qual e a primeira decisao antes de criar campanha?",
+                "explanation": "Sem objetivo claro, nao ha criterio para medir sucesso.",
+                "answers": [
+                  { "text": "Definir o objetivo da campanha", "isCorrect": true },
+                  { "text": "Escolher a cor do botao", "isCorrect": false },
+                  { "text": "Aumentar o orcamento", "isCorrect": false }
+                ]
+              }
+            ]
+          },
+          "flashcards": [
+            { "front": "O que e busca ativa?", "back": "Quando o usuario pesquisa algo porque ja tem interesse, duvida ou necessidade.", "difficulty": "BASIC" },
+            { "front": "Quais sao os pilares da primeira campanha?", "back": "Objetivo, palavra-chave, anuncio, pagina e medicao.", "difficulty": "BASIC" }
+          ]
+        },
+        {
+          "title": "Checklist antes de anunciar",
+          "slug": "checklist-antes-de-anunciar",
+          "description": "Prepare conta, oferta, pagina e medicao antes de gastar verba.",
+          "objectives": ["Preparar a primeira campanha", "Evitar erros caros", "Validar se a oferta esta clara"],
+          "readingMinutes": 12,
+          "difficulty": "Basico",
+          "order": 2,
+          "contentMd": "# Checklist antes de anunciar\n\n## Objetivos\n\n- Validar se existe uma oferta clara.\n- Conferir se a pagina esta pronta para receber trafego.\n- Preparar a medicao minima antes de investir.\n\n## Conteudo\n\nMuitos iniciantes pulam direto para a criacao da campanha. O problema e que uma campanha nao corrige uma oferta confusa, uma pagina lenta ou a ausencia de conversao.\n\nAntes de anunciar, voce precisa saber o que sera vendido, para quem, qual promessa sera feita e como o resultado sera medido.\n\n## Passo a passo\n\n1. Escreva a oferta em uma frase.\n2. Revise se a pagina tem titulo, beneficio, prova e chamada para acao.\n3. Confirme se o formulario, WhatsApp ou checkout funciona.\n4. Configure uma conversao simples.\n5. Defina verba diaria de teste.\n\n## Checklist\n\n- Oferta escrita em uma frase.\n- Pagina abre no celular.\n- CTA funciona.\n- Conversao configurada.\n- Verba diaria definida.\n\n## Resumo\n\nAnunciar sem checklist e transformar verba em tentativa cega. Uma boa campanha comeca antes do painel do Google Ads.",
+          "quiz": {
+            "title": "Quiz rapido",
+            "questions": [
+              {
+                "prompt": "Por que configurar conversao antes de anunciar?",
+                "explanation": "A conversao mostra se o investimento esta gerando a acao desejada.",
+                "answers": [
+                  { "text": "Para medir resultados reais", "isCorrect": true },
+                  { "text": "Para deixar o anuncio mais bonito", "isCorrect": false },
+                  { "text": "Para aumentar automaticamente a verba", "isCorrect": false }
+                ]
+              }
+            ]
+          },
+          "flashcards": [
+            { "front": "O que precisa funcionar antes do anuncio?", "back": "Pagina, CTA e medicao da conversao.", "difficulty": "BASIC" },
+            { "front": "Qual e a funcao do checklist?", "back": "Reduzir erros antes de investir dinheiro.", "difficulty": "BASIC" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Palavras-chave e anuncios",
+      "slug": "palavras-chave-e-anuncios",
+      "order": 2,
+      "lessons": [
+        {
+          "title": "Como escolher palavras-chave iniciais",
+          "slug": "como-escolher-palavras-chave-iniciais",
+          "description": "Monte uma lista enxuta de termos com intencao comercial.",
+          "objectives": ["Escolher palavras-chave", "Separar termos informativos e comerciais", "Evitar dispersao"],
+          "readingMinutes": 14,
+          "difficulty": "Intermediario",
+          "order": 1,
+          "contentMd": "# Como escolher palavras-chave iniciais\n\n## Objetivos\n\n- Criar uma lista pequena e controlavel.\n- Priorizar termos com intencao de compra ou contato.\n- Evitar palavras muito amplas no primeiro teste.\n\n## Conteudo\n\nPalavras-chave representam a ponte entre a busca do usuario e sua oferta. No inicio, menos e melhor. Uma lista pequena facilita analisar dados e identificar o que funciona.\n\nTermos como comprar, contratar, preco, perto de mim e especialista indicam intencao mais forte que termos genericos.\n\n## Passo a passo\n\n1. Liste o servico principal.\n2. Adicione variações com comprar, contratar, preco e cidade.\n3. Remova termos muito amplos.\n4. Separe grupos por tema.\n5. Crie negativas obvias como gratis, curso gratis ou vaga.\n\n## Checklist\n\n- Lista com 10 a 25 termos iniciais.\n- Termos organizados por tema.\n- Palavras negativas basicas adicionadas.\n- Termos genericos removidos.\n\n## Resumo\n\nUma boa primeira lista e pequena, intencional e facil de analisar. Controle vem antes de escala.",
+          "quiz": {
+            "title": "Quiz rapido",
+            "questions": [
+              {
+                "prompt": "Por que comecar com poucas palavras-chave?",
+                "explanation": "Listas menores facilitam analise e otimizacao.",
+                "answers": [
+                  { "text": "Para controlar melhor o teste", "isCorrect": true },
+                  { "text": "Porque o Google proibe muitas palavras", "isCorrect": false },
+                  { "text": "Para impedir cliques", "isCorrect": false }
+                ]
+              }
+            ]
+          },
+          "flashcards": [
+            { "front": "O que indica intencao comercial?", "back": "Termos como comprar, contratar, preco, cidade e perto de mim.", "difficulty": "BASIC" },
+            { "front": "Qual e o risco de palavra muito ampla?", "back": "Atrair cliques pouco qualificados e gastar verba sem aprender.", "difficulty": "BASIC" }
+          ]
+        },
+        {
+          "title": "Escrevendo anuncios que recebem cliques certos",
+          "slug": "escrevendo-anuncios-que-recebem-cliques-certos",
+          "description": "Crie titulos e descricoes alinhados com a busca e a oferta.",
+          "objectives": ["Escrever titulos claros", "Alinhar anuncio e pagina", "Filtrar cliques ruins"],
+          "readingMinutes": 13,
+          "difficulty": "Intermediario",
+          "order": 2,
+          "contentMd": "# Escrevendo anuncios que recebem cliques certos\n\n## Objetivos\n\n- Criar anuncios claros e especificos.\n- Mostrar beneficio sem exagero.\n- Filtrar usuarios que nao combinam com a oferta.\n\n## Conteudo\n\nUm bom anuncio nao tenta agradar todo mundo. Ele conecta a palavra pesquisada com a promessa da pagina. O objetivo e receber cliques de pessoas que realmente podem virar lead ou cliente.\n\nUse titulos com servico, diferencial e localizacao quando fizer sentido. Nas descricoes, explique o proximo passo.\n\n## Passo a passo\n\n1. Use a palavra-chave principal em um titulo.\n2. Inclua um beneficio concreto.\n3. Escreva uma chamada para acao simples.\n4. Evite promessas absolutas.\n5. Confirme se a pagina repete a mesma promessa.\n\n## Checklist\n\n- Palavra-chave aparece no anuncio.\n- Beneficio esta claro.\n- CTA esta presente.\n- Anuncio combina com a pagina.\n- Promessa e realista.\n\n## Resumo\n\nO melhor anuncio nao e o mais chamativo. E o mais coerente com a busca, a oferta e a pagina.",
+          "quiz": {
+            "title": "Quiz rapido",
+            "questions": [
+              {
+                "prompt": "O que um bom anuncio deve conectar?",
+                "explanation": "A coerencia entre busca, anuncio e pagina melhora a qualidade do clique.",
+                "answers": [
+                  { "text": "Busca, promessa e pagina", "isCorrect": true },
+                  { "text": "Somente emoji e desconto", "isCorrect": false },
+                  { "text": "Apenas nome da empresa", "isCorrect": false }
+                ]
+              }
+            ]
+          },
+          "flashcards": [
+            { "front": "Qual e a funcao do anuncio?", "back": "Conectar a intencao da busca com a promessa da pagina.", "difficulty": "BASIC" },
+            { "front": "Por que evitar promessas absolutas?", "back": "Elas geram expectativa errada e podem reduzir confianca.", "difficulty": "BASIC" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Publicacao e otimizacao",
+      "slug": "publicacao-e-otimizacao",
+      "order": 3,
+      "lessons": [
+        {
+          "title": "Publicando a primeira campanha",
+          "slug": "publicando-a-primeira-campanha",
+          "description": "Configure campanha de pesquisa com estrutura simples e medicao.",
+          "objectives": ["Criar campanha de pesquisa", "Definir orcamento", "Revisar antes de publicar"],
+          "readingMinutes": 16,
+          "difficulty": "Pratico",
+          "order": 1,
+          "contentMd": "# Publicando a primeira campanha\n\n## Objetivos\n\n- Criar uma campanha simples de pesquisa.\n- Definir verba diaria segura.\n- Revisar configuracoes antes de publicar.\n\n## Conteudo\n\nA primeira campanha deve ser simples. Evite misturar muitos objetivos, publicos e temas. Uma estrutura enxuta facilita diagnosticar resultados.\n\nComece com uma campanha de pesquisa, poucos grupos de anuncio e palavras relacionadas ao mesmo tema.\n\n## Passo a passo\n\n1. Escolha objetivo de leads ou trafego qualificado.\n2. Selecione rede de pesquisa.\n3. Defina localizacao e idioma.\n4. Configure verba diaria de teste.\n5. Adicione palavras-chave e anuncios.\n6. Revise conversao, URL final e extensoes.\n7. Publique e monitore os primeiros dados.\n\n## Checklist\n\n- Rede de pesquisa selecionada.\n- Localizacao correta.\n- Verba diaria definida.\n- Conversao configurada.\n- URL final testada.\n\n## Resumo\n\nA primeira publicacao deve gerar aprendizado, nao escala imediata. Simplicidade facilita correcao.",
+          "quiz": {
+            "title": "Quiz rapido",
+            "questions": [
+              {
+                "prompt": "Qual e a melhor estrutura para a primeira campanha?",
+                "explanation": "Estrutura simples reduz ruido e facilita leitura dos dados.",
+                "answers": [
+                  { "text": "Simples e focada", "isCorrect": true },
+                  { "text": "Com todos os produtos juntos", "isCorrect": false },
+                  { "text": "Sem conversao configurada", "isCorrect": false }
+                ]
+              }
+            ]
+          },
+          "flashcards": [
+            { "front": "O que revisar antes de publicar?", "back": "Rede, localizacao, verba, conversao, palavras, anuncios e URL final.", "difficulty": "BASIC" },
+            { "front": "Por que simplificar a primeira campanha?", "back": "Para aprender com dados claros e corrigir rapidamente.", "difficulty": "BASIC" }
+          ]
+        },
+        {
+          "title": "Primeiras otimizacoes depois dos dados",
+          "slug": "primeiras-otimizacoes-depois-dos-dados",
+          "description": "Aprenda o que olhar depois dos primeiros cliques e conversoes.",
+          "objectives": ["Ler metricas iniciais", "Pausar desperdicios", "Melhorar campanhas sem ansiedade"],
+          "readingMinutes": 15,
+          "difficulty": "Pratico",
+          "order": 2,
+          "contentMd": "# Primeiras otimizacoes depois dos dados\n\n## Objetivos\n\n- Saber quando mexer e quando esperar.\n- Identificar desperdicios obvios.\n- Melhorar palavras, anuncios e paginas com base em dados.\n\n## Conteudo\n\nOtimizacao nao e mudar tudo todo dia. Nos primeiros dias, observe termos de pesquisa, cliques, taxa de conversao e custo por resultado.\n\nSe uma palavra consome verba sem sinal de qualidade, investigue. Se um termo de pesquisa nao tem relacao com a oferta, adicione como negativa.\n\n## Passo a passo\n\n1. Aguarde volume minimo de cliques.\n2. Analise termos de pesquisa.\n3. Adicione negativas claras.\n4. Pause palavras sem intencao.\n5. Ajuste anuncios com baixa coerencia.\n6. Revise pagina se ha clique mas nao ha conversao.\n\n## Checklist\n\n- Termos de pesquisa revisados.\n- Negativas adicionadas.\n- Palavras ruins pausadas.\n- Anuncios comparados.\n- Pagina revisada.\n\n## Resumo\n\nOtimizacao boa e baseada em evidencia. Mexa menos, mas mexa melhor.",
+          "quiz": {
+            "title": "Quiz rapido",
+            "questions": [
+              {
+                "prompt": "O que analisar antes de pausar tudo?",
+                "explanation": "Termos de pesquisa e conversoes indicam se o trafego faz sentido.",
+                "answers": [
+                  { "text": "Termos de pesquisa e sinais de conversao", "isCorrect": true },
+                  { "text": "Apenas se voce gostou do anuncio", "isCorrect": false },
+                  { "text": "Somente a cor da pagina", "isCorrect": false }
+                ]
+              }
+            ]
+          },
+          "flashcards": [
+            { "front": "O que sao palavras negativas?", "back": "Termos bloqueados para evitar cliques irrelevantes.", "difficulty": "BASIC" },
+            { "front": "Qual e o erro de otimizacao comum?", "back": "Mudar tudo antes de ter dados suficientes.", "difficulty": "BASIC" }
+          ]
+        }
+      ]
+    }
+  ]
+}

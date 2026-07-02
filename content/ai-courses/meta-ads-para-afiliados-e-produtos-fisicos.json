@@ -1,0 +1,202 @@
+{
+  "course": {
+    "title": "Meta Ads para Afiliados e Produtos Fisicos",
+    "slug": "meta-ads-para-afiliados-e-produtos-fisicos",
+    "description": "Curso pratico para criar campanhas no Facebook e Instagram Ads com criativos, publicos, pixel, testes e otimizacao para afiliados e produtos fisicos.",
+    "level": "Iniciante",
+    "workloadHours": 16,
+    "priceCents": 6990,
+    "status": "PUBLISHED"
+  },
+  "modules": [
+    {
+      "title": "Base da conta e estrategia",
+      "slug": "base-da-conta-e-estrategia",
+      "order": 1,
+      "lessons": [
+        {
+          "title": "Como pensar campanhas no Facebook e Instagram",
+          "slug": "como-pensar-campanhas-no-facebook-e-instagram",
+          "description": "Entenda interrupcao, criativo e promessa antes de criar a campanha.",
+          "objectives": ["Entender o papel do criativo", "Definir oferta", "Escolher objetivo inicial"],
+          "readingMinutes": 10,
+          "difficulty": "Basico",
+          "order": 1,
+          "contentMd": "# Como pensar campanhas no Facebook e Instagram\n\n## Objetivos\n\n- Entender que Meta Ads interrompe a navegacao do usuario.\n- Definir uma promessa simples para o criativo.\n- Escolher um objetivo coerente com a etapa do funil.\n\n## Conteudo\n\nDiferente do Google, no Meta Ads a pessoa normalmente nao esta pesquisando pelo produto. O criativo precisa chamar atencao, gerar curiosidade e conectar uma dor ou desejo com a oferta.\n\nPara iniciantes, a campanha deve testar uma promessa por vez. Se voce testa muitas ideias juntas, fica dificil saber o que funcionou.\n\n## Passo a passo\n\n1. Defina quem voce quer atingir.\n2. Escreva a dor ou desejo principal.\n3. Transforme isso em uma promessa clara.\n4. Crie um criativo simples para essa promessa.\n5. Escolha objetivo de conversao, lead ou trafego conforme sua estrutura.\n\n## Checklist\n\n- Publico definido.\n- Dor ou desejo escrito.\n- Promessa clara.\n- Criativo alinhado.\n- Objetivo coerente.\n\n## Resumo\n\nMeta Ads depende muito de criativo e promessa. Antes de mexer em publico, garanta que a mensagem faz sentido.",
+          "quiz": {
+            "title": "Quiz rapido",
+            "questions": [
+              {
+                "prompt": "Qual e a principal diferenca do Meta Ads em relacao ao Google Ads?",
+                "explanation": "No Meta Ads, o anuncio interrompe a navegacao e precisa despertar interesse.",
+                "answers": [
+                  { "text": "Meta Ads captura apenas buscas ativas", "isCorrect": false },
+                  { "text": "Meta Ads interrompe a navegacao com criativos", "isCorrect": true },
+                  { "text": "Meta Ads nao usa criativos", "isCorrect": false }
+                ]
+              }
+            ]
+          },
+          "flashcards": [
+            { "front": "Qual e o papel do criativo no Meta Ads?", "back": "Chamar atencao e conectar uma dor ou desejo com a oferta.", "difficulty": "BASIC" },
+            { "front": "Por que testar uma promessa por vez?", "back": "Para saber qual mensagem realmente gerou resultado.", "difficulty": "BASIC" }
+          ]
+        },
+        {
+          "title": "Business Manager, pagina e pixel",
+          "slug": "business-manager-pagina-e-pixel",
+          "description": "Prepare a estrutura minima para anunciar com rastreamento.",
+          "objectives": ["Organizar ativos", "Entender pixel", "Preparar eventos"],
+          "readingMinutes": 12,
+          "difficulty": "Basico",
+          "order": 2,
+          "contentMd": "# Business Manager, pagina e pixel\n\n## Objetivos\n\n- Organizar pagina, conta de anuncios e pixel.\n- Entender por que eventos sao importantes.\n- Preparar a base antes de investir.\n\n## Conteudo\n\nO Business Manager organiza os ativos da empresa. Para anunciar com mais controle, voce precisa saber onde estao pagina, conta de anuncios, pixel e dominio.\n\nO pixel registra eventos no site, como visualizacao de pagina, lead ou compra. Sem eventos, a campanha fica com menos informacao para otimizar.\n\n## Passo a passo\n\n1. Confirme acesso ao Business Manager.\n2. Verifique a pagina do Facebook e Instagram.\n3. Confira a conta de anuncios.\n4. Crie ou valide o pixel.\n5. Configure eventos principais.\n6. Teste se os eventos disparam.\n\n## Checklist\n\n- Business Manager acessivel.\n- Pagina conectada.\n- Conta de anuncios ativa.\n- Pixel instalado.\n- Evento principal testado.\n\n## Resumo\n\nA estrutura tecnica nao precisa ser perfeita no inicio, mas precisa medir o basico. Sem rastreamento, voce otimiza no escuro.",
+          "quiz": {
+            "title": "Quiz rapido",
+            "questions": [
+              {
+                "prompt": "Para que serve o pixel?",
+                "explanation": "O pixel registra eventos do site para medicao e otimizacao.",
+                "answers": [
+                  { "text": "Registrar eventos no site", "isCorrect": true },
+                  { "text": "Criar imagens automaticamente", "isCorrect": false },
+                  { "text": "Substituir a pagina de vendas", "isCorrect": false }
+                ]
+              }
+            ]
+          },
+          "flashcards": [
+            { "front": "O que o Business Manager organiza?", "back": "Pagina, Instagram, conta de anuncios, pixel, dominio e permissoes.", "difficulty": "BASIC" },
+            { "front": "Por que testar eventos?", "back": "Para confirmar que a medicao funciona antes de gastar verba.", "difficulty": "BASIC" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Criativos, publicos e testes",
+      "slug": "criativos-publicos-e-testes",
+      "order": 2,
+      "lessons": [
+        {
+          "title": "Criativos que vendem a ideia",
+          "slug": "criativos-que-vendem-a-ideia",
+          "description": "Monte criativos simples com gancho, promessa e prova.",
+          "objectives": ["Criar ganchos", "Estruturar promessa", "Evitar criativos genericos"],
+          "readingMinutes": 14,
+          "difficulty": "Intermediario",
+          "order": 1,
+          "contentMd": "# Criativos que vendem a ideia\n\n## Objetivos\n\n- Criar criativos com gancho claro.\n- Traduzir a oferta em uma promessa visual.\n- Evitar pecas genericas que nao comunicam valor.\n\n## Conteudo\n\nO criativo e o primeiro filtro da campanha. Ele precisa fazer a pessoa parar, entender o problema e se interessar pelo proximo passo.\n\nUma estrutura simples e: gancho, dor ou desejo, promessa, prova e chamada para acao. Isso pode virar imagem, video curto ou carrossel.\n\n## Passo a passo\n\n1. Escreva 5 dores do publico.\n2. Transforme cada dor em um gancho.\n3. Escolha uma promessa especifica.\n4. Inclua prova, demonstracao ou contexto.\n5. Finalize com CTA simples.\n\n## Checklist\n\n- Gancho forte.\n- Promessa especifica.\n- Oferta entendida em poucos segundos.\n- CTA claro.\n- Visual limpo.\n\n## Resumo\n\nCriativo bom nao e apenas bonito. Ele comunica uma ideia que o publico entende rapidamente.",
+          "quiz": {
+            "title": "Quiz rapido",
+            "questions": [
+              {
+                "prompt": "Qual e a funcao do gancho?",
+                "explanation": "O gancho faz a pessoa parar e prestar atencao na mensagem.",
+                "answers": [
+                  { "text": "Parar a atencao do usuario", "isCorrect": true },
+                  { "text": "Esconder a oferta", "isCorrect": false },
+                  { "text": "Trocar o pixel", "isCorrect": false }
+                ]
+              }
+            ]
+          },
+          "flashcards": [
+            { "front": "Qual estrutura simples de criativo?", "back": "Gancho, dor ou desejo, promessa, prova e CTA.", "difficulty": "BASIC" },
+            { "front": "Criativo bom precisa ser so bonito?", "back": "Nao. Precisa comunicar valor rapidamente.", "difficulty": "BASIC" }
+          ]
+        },
+        {
+          "title": "Publicos iniciais para afiliados e produtos fisicos",
+          "slug": "publicos-iniciais-para-afiliados-e-produtos-fisicos",
+          "description": "Comece com publicos simples e evite segmentacao excessiva.",
+          "objectives": ["Criar publicos iniciais", "Entender amplo vs interesse", "Testar sem complicar"],
+          "readingMinutes": 13,
+          "difficulty": "Intermediario",
+          "order": 2,
+          "contentMd": "# Publicos iniciais para afiliados e produtos fisicos\n\n## Objetivos\n\n- Escolher publicos para o primeiro teste.\n- Evitar segmentacao excessiva.\n- Separar teste de criativo e teste de publico.\n\n## Conteudo\n\nNo Meta Ads moderno, publicos amplos podem funcionar bem quando o criativo e a pagina filtram corretamente. Ainda assim, interesses podem ajudar em nichos especificos.\n\nO erro comum e empilhar muitos interesses e reduzir demais o alcance. Isso dificulta entrega e aprendizado.\n\n## Passo a passo\n\n1. Crie um publico amplo com localizacao correta.\n2. Crie um publico de interesses principais.\n3. Mantenha criativos parecidos para comparar publico.\n4. Evite muitas camadas de segmentacao.\n5. Analise custo por clique, CTR e conversao.\n\n## Checklist\n\n- Localizacao correta.\n- Publico amplo criado.\n- Publico de interesse criado.\n- Criativos controlados.\n- Metricas comparadas.\n\n## Resumo\n\nPublico nao salva criativo ruim. Comece simples, compare com calma e deixe os dados guiarem a proxima decisao.",
+          "quiz": {
+            "title": "Quiz rapido",
+            "questions": [
+              {
+                "prompt": "Qual erro comum em publicos iniciais?",
+                "explanation": "Segmentar demais pode limitar entrega e aprendizado.",
+                "answers": [
+                  { "text": "Segmentar demais", "isCorrect": true },
+                  { "text": "Medir resultados", "isCorrect": false },
+                  { "text": "Testar criativos", "isCorrect": false }
+                ]
+              }
+            ]
+          },
+          "flashcards": [
+            { "front": "Publico amplo pode funcionar quando?", "back": "Quando criativo e pagina filtram bem a audiencia.", "difficulty": "BASIC" },
+            { "front": "O que comparar em publicos?", "back": "Custo por clique, CTR, conversao e qualidade dos leads.", "difficulty": "BASIC" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Campanha e otimizacao",
+      "slug": "campanha-e-otimizacao",
+      "order": 3,
+      "lessons": [
+        {
+          "title": "Criando a primeira campanha no Meta Ads",
+          "slug": "criando-a-primeira-campanha-no-meta-ads",
+          "description": "Configure uma campanha simples para testar oferta, publico e criativo.",
+          "objectives": ["Escolher objetivo", "Definir conjunto", "Publicar com controle"],
+          "readingMinutes": 16,
+          "difficulty": "Pratico",
+          "order": 1,
+          "contentMd": "# Criando a primeira campanha no Meta Ads\n\n## Objetivos\n\n- Criar uma campanha com estrutura simples.\n- Definir conjunto, publico, posicionamentos e orcamento.\n- Publicar com criterio de avaliacao.\n\n## Conteudo\n\nA primeira campanha deve responder uma pergunta: esta promessa gera interesse qualificado? Para isso, controle variaveis. Nao misture muitos publicos e muitos criativos logo no inicio.\n\nEscolha objetivo conforme sua estrutura. Se voce mede conversao, use conversoes. Se ainda nao mede, comece com trafego ou lead e corrija a estrutura rapidamente.\n\n## Passo a passo\n\n1. Escolha objetivo coerente.\n2. Crie um conjunto com publico definido.\n3. Configure orcamento diario de teste.\n4. Selecione posicionamentos automaticos no inicio.\n5. Suba 2 ou 3 criativos.\n6. Revise URL, pixel e evento.\n7. Publique e acompanhe.\n\n## Checklist\n\n- Objetivo definido.\n- Publico configurado.\n- Orcamento seguro.\n- Criativos revisados.\n- Evento verificado.\n\n## Resumo\n\nA primeira campanha deve testar uma hipotese clara. Controle as variaveis para aprender mais rapido.",
+          "quiz": {
+            "title": "Quiz rapido",
+            "questions": [
+              {
+                "prompt": "Qual pergunta a primeira campanha deve responder?",
+                "explanation": "A campanha inicial deve validar uma promessa ou hipotese.",
+                "answers": [
+                  { "text": "Se a promessa gera interesse qualificado", "isCorrect": true },
+                  { "text": "Se todos os criativos podem rodar juntos", "isCorrect": false },
+                  { "text": "Se devemos gastar tudo no primeiro dia", "isCorrect": false }
+                ]
+              }
+            ]
+          },
+          "flashcards": [
+            { "front": "Qual e a funcao da primeira campanha?", "back": "Validar uma hipotese de promessa, publico e criativo.", "difficulty": "BASIC" },
+            { "front": "Por que controlar variaveis?", "back": "Para saber o que causou o resultado.", "difficulty": "BASIC" }
+          ]
+        },
+        {
+          "title": "Otimizando sem matar o aprendizado",
+          "slug": "otimizando-sem-matar-o-aprendizado",
+          "description": "Aprenda a analisar campanhas sem mudar tudo cedo demais.",
+          "objectives": ["Ler metricas", "Evitar mudancas ansiosas", "Melhorar criativos e oferta"],
+          "readingMinutes": 15,
+          "difficulty": "Pratico",
+          "order": 2,
+          "contentMd": "# Otimizando sem matar o aprendizado\n\n## Objetivos\n\n- Entender quais metricas observar primeiro.\n- Evitar alteracoes impulsivas.\n- Melhorar campanha com base em sinais reais.\n\n## Conteudo\n\nOtimizacao no Meta Ads exige paciencia. Se voce muda publico, criativo e orcamento ao mesmo tempo, perde referencia.\n\nObserve CTR, custo por clique, visualizacao da pagina, leads, compras e qualidade dos contatos. Uma campanha com clique barato pode ser ruim se nao gera conversao.\n\n## Passo a passo\n\n1. Aguarde volume minimo de impressao e cliques.\n2. Compare criativos por CTR e conversao.\n3. Pause criativos com baixo sinal.\n4. Mantenha vencedores por mais tempo.\n5. Ajuste pagina ou oferta se ha clique sem conversao.\n6. Escale somente depois de consistencia.\n\n## Checklist\n\n- Dados suficientes.\n- Criativos comparados.\n- Conversoes analisadas.\n- Oferta revisada.\n- Escala feita com cuidado.\n\n## Resumo\n\nOtimizar e decidir com dados. Mude uma coisa por vez e preserve o aprendizado da campanha.",
+          "quiz": {
+            "title": "Quiz rapido",
+            "questions": [
+              {
+                "prompt": "Qual e o risco de mudar tudo ao mesmo tempo?",
+                "explanation": "Voce perde referencia e nao sabe qual mudanca afetou o resultado.",
+                "answers": [
+                  { "text": "Perder referencia do que funcionou", "isCorrect": true },
+                  { "text": "Melhorar automaticamente tudo", "isCorrect": false },
+                  { "text": "Criar pixel novo", "isCorrect": false }
+                ]
+              }
+            ]
+          },
+          "flashcards": [
+            { "front": "O que observar alem de clique barato?", "back": "Conversao, qualidade do lead e consistencia do resultado.", "difficulty": "BASIC" },
+            { "front": "Como otimizar com menos risco?", "back": "Mude uma coisa por vez e compare com dados suficientes.", "difficulty": "BASIC" }
+          ]
+        }
+      ]
+    }
+  ]
+}

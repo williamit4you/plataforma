@@ -38,6 +38,8 @@ Validacoes realizadas:
   - [x] Rotas e telas de cursos criadas.
   - [x] Conteudo mockado/fallback funcionando.
   - [x] Pagina de aula com Markdown criada.
+  - [x] Tela de aula melhorada com modo estudo por etapas/secoes.
+  - [x] Markdown estilizado para leitura profissional.
   - [x] Acao base para concluir aula criada.
   - [x] Conectar leitura de cursos, modulos, aulas, quizzes e flashcards ao banco real.
   - [x] Conectar conclusao de aula ao banco real.
@@ -80,6 +82,10 @@ Validacoes realizadas:
   - [x] Criacao/atualizacao basica de cursos.
   - [x] Criacao/atualizacao basica de modulos.
   - [x] Criacao/atualizacao basica de aulas em Markdown.
+- [x] Importador de curso completo por JSON gerado com IA.
+- [x] Formato JSON com Markdown documentado para ChatGPT/Gemini.
+- [x] Curso Google Ads do Zero ao Primeiro Anuncio criado em JSON e importado no banco real.
+- [x] Curso Meta Ads para Afiliados e Produtos Fisicos criado em JSON e importado no banco real.
   - [x] Liberacao manual de acesso por usuario.
   - [ ] CRUD completo com edicao detalhada, exclusao segura e validacoes visuais.
   - [ ] CRUD completo de quizzes.
@@ -125,9 +131,13 @@ Validacoes realizadas:
 - [x] Listagem de cursos.
 - [x] Pagina de curso com modulos e aulas.
 - [x] Pagina de aula com Markdown, quiz, flashcards, conclusao e bloco de IA.
+- [x] Experiencia de aula em formato de etapas de estudo.
 - [x] Paginas de trilhas, flashcards, revisoes, simulados e certificados.
 - [x] Pagina publica de validacao de certificado.
 - [x] Painel admin inicial.
+- [x] Importacao administrativa de cursos completos via JSON + Markdown.
+- [x] Arquivos versionados de conteudo em `content/ai-courses/`.
+- [x] Script `npm run import:ai-courses` para importar cursos gerados por IA.
 - [x] API de busca.
 - [x] API de IA com contrato preparado para RAG.
 - [x] API de webhook Kiwify.
@@ -136,6 +146,7 @@ Validacoes realizadas:
 - [x] Seed inicial com admin, cursos, modulos, aulas, quizzes e flashcards.
 - [x] Dockerfile, docker-compose, `.gitignore`, `.dockerignore` e `.env.example`.
 - [x] Documentacao de arquitetura e deploy Easypanel.
+- [x] Documentacao do formato de importacao em `docs/ai-course-import-format.md`.
 
 ## Pendencias criticas antes de producao
 
@@ -150,6 +161,9 @@ Validacoes realizadas:
 - [x] Conectar progresso, flashcards e certificados ao banco.
 - [ ] Conectar tentativas/respostas de quiz ao banco.
 - [x] Implementar CRUD basico real de cursos, modulos e aulas no painel admin.
+- [x] Implementar importador de cursos completos gerados por IA.
+- [x] Preencher Google Ads com 3 modulos e 6 aulas praticas.
+- [x] Preencher Meta/Facebook Ads com 3 modulos e 6 aulas praticas.
 - [ ] Implementar CRUD completo no painel admin.
 - [ ] Validar payload e assinatura reais da Kiwify.
 - [x] Implementar liberacao automatica de cursos apos compra aprovada.

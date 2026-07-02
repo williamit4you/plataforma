@@ -30,3 +30,79 @@ select {
   background: #99f6e4;
   color: #134e4a;
 }
+
+.lesson-markdown {
+  color: #334155;
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.lesson-markdown h1,
+.lesson-markdown h2,
+.lesson-markdown h3 {
+  color: #0f172a;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.lesson-markdown h1 {
+  font-size: 1.875rem;
+  margin-bottom: 1rem;
+}
+
+.lesson-markdown h2 {
+  font-size: 1.35rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.lesson-markdown h3 {
+  font-size: 1.05rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.lesson-markdown p {
+  margin: 0.75rem 0;
+}
+
+.lesson-markdown ul,
+.lesson-markdown ol {
+  margin: 0.75rem 0;
+  padding-left: 1.25rem;
+}
+
+.lesson-markdown li {
+  margin: 0.35rem 0;
+}
+
+.lesson-markdown blockquote {
+  border-left: 4px solid #14b8a6;
+  background: #f0fdfa;
+  color: #115e59;
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.lesson-markdown code {
+  border-radius: 0.35rem;
+  background: #f1f5f9;
+  color: #0f172a;
+  padding: 0.12rem 0.35rem;
+  font-size: 0.9em;
+}
+
+.lesson-markdown pre {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  background: #0f172a;
+  color: #e2e8f0;
+  padding: 1rem;
+}
+
+.lesson-markdown pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}

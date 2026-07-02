@@ -5,6 +5,7 @@ import { z } from "zod";
 import { requireAdmin } from "@/lib/permissions";
 import { prisma } from "@/lib/prisma";
 import { slugify } from "@/lib/utils";
+import { importAiCoursePayload } from "@/server/services/course-importer";
 
 const accessSchema = z.object({
   userId: z.string(),
@@ -150,5 +151,16 @@ export async function createLessonAction(formData: FormData) {
   });
 
   revalidatePath("/admin/lessons");
+  revalidatePath("/courses");
+}
+
+export async function importAiCourseAction(formData: FormData) {
+  const admin = await requireAdmin();
+  const rawPayload = String(formData.get("payload") ?? "");
+  const json = JSON.parse(rawPayload) as unknown;
+  await importAiCoursePayload(prisma, json, { adminUserId: admin.id });
+
+  revalidatePath("/admin/import");
+  revalidatePath("/admin/courses");
   revalidatePath("/courses");
 }
