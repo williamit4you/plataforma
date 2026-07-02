@@ -159,6 +159,7 @@ Validacoes realizadas:
 - [x] Dockerfile, docker-compose, `.gitignore`, `.dockerignore` e `.env.example`.
 - [x] Dockerfile configurado para aplicar migrations automaticamente no startup do container.
 - [x] Dockerfile configurado para rodar seed automaticamente quando `ADMIN_SEED_PASSWORD` existir.
+- [x] Seed ajustado para funcionar no runtime Docker sem depender de arquivos de `src/`.
 - [x] Documentacao de arquitetura e deploy Easypanel.
 - [x] Documentacao do formato de importacao em `docs/ai-course-import-format.md`.
 
