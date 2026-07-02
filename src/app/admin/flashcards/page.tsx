@@ -3,8 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { getCourses } from "@/lib/learning";
+import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/permissions";
-import { createFlashcardAction } from "@/server/actions/admin-actions";
+import { createFlashcardAction, deleteFlashcardAction } from "@/server/actions/admin-actions";
 
 export default async function AdminFlashcardsPage() {
   await requireAdmin();
@@ -17,6 +18,13 @@ export default async function AdminFlashcardsPage() {
       }))
     )
   );
+
+  const flashcards = process.env.DATABASE_URL
+    ? await prisma.flashcard.findMany({
+        include: { lesson: { include: { module: { include: { course: true } } } } },
+        orderBy: { createdAt: "desc" },
+      }).catch(() => [])
+    : [];
 
   return (
     <AppShell admin>
@@ -50,6 +58,33 @@ export default async function AdminFlashcardsPage() {
           </form>
         </CardContent>
       </Card>
+      <div className="mt-6 grid gap-4 md:grid-cols-2">
+        {flashcards.length === 0 && (
+          <Card>
+            <CardContent className="pt-5 text-sm text-slate-600">Nenhum flashcard cadastrado ainda.</CardContent>
+          </Card>
+        )}
+        {flashcards.map((flashcard) => (
+          <Card key={flashcard.id}>
+            <CardHeader>
+              <CardTitle>{flashcard.front}</CardTitle>
+              <p className="text-sm text-slate-500">
+                {flashcard.lesson?.module.course.title} - {flashcard.lesson?.title}
+              </p>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm leading-6 text-slate-600">{flashcard.back}</p>
+              <p className="mt-2 text-xs text-teal-700">{flashcard.difficulty}</p>
+              <form action={deleteFlashcardAction} className="mt-4">
+                <input type="hidden" name="flashcardId" value={flashcard.id} />
+                <Button variant="danger" size="sm">
+                  Excluir flashcard
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
     </AppShell>
   );
 }

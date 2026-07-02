@@ -3,8 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { getCourses } from "@/lib/learning";
+import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/permissions";
-import { createQuizQuestionAction } from "@/server/actions/admin-actions";
+import { createQuizQuestionAction, deleteQuizQuestionAction } from "@/server/actions/admin-actions";
 
 export default async function AdminQuizzesPage() {
   await requireAdmin();
@@ -17,6 +18,16 @@ export default async function AdminQuizzesPage() {
       }))
     )
   );
+
+  const quizzes = process.env.DATABASE_URL
+    ? await prisma.quiz.findMany({
+        include: {
+          lesson: { include: { module: { include: { course: true } } } },
+          questions: { include: { answers: true } },
+        },
+        orderBy: { createdAt: "desc" },
+      }).catch(() => [])
+    : [];
 
   return (
     <AppShell admin>
@@ -47,6 +58,44 @@ export default async function AdminQuizzesPage() {
           </form>
         </CardContent>
       </Card>
+      <div className="mt-6 grid gap-4">
+        {quizzes.length === 0 && (
+          <Card>
+            <CardContent className="pt-5 text-sm text-slate-600">Nenhum quiz cadastrado ainda.</CardContent>
+          </Card>
+        )}
+        {quizzes.map((quiz) => (
+          <Card key={quiz.id}>
+            <CardHeader>
+              <CardTitle>{quiz.title}</CardTitle>
+              <p className="text-sm text-slate-500">
+                {quiz.lesson?.module.course.title} - {quiz.lesson?.title}
+              </p>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {quiz.questions.map((question) => (
+                <div key={question.id} className="rounded-md border border-slate-200 p-3">
+                  <p className="text-sm font-medium text-slate-950">{question.prompt}</p>
+                  <div className="mt-2 space-y-1 text-xs text-slate-500">
+                    {question.answers.map((answer) => (
+                      <p key={answer.id}>
+                        {answer.isCorrect ? "Correta: " : ""}
+                        {answer.text}
+                      </p>
+                    ))}
+                  </div>
+                  <form action={deleteQuizQuestionAction} className="mt-3">
+                    <input type="hidden" name="questionId" value={question.id} />
+                    <Button variant="danger" size="sm">
+                      Excluir pergunta
+                    </Button>
+                  </form>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+        ))}
+      </div>
     </AppShell>
   );
 }

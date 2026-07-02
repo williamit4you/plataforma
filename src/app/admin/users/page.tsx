@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getCourses } from "@/lib/learning";
 import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/permissions";
-import { grantAccessAction } from "@/server/actions/admin-actions";
+import { grantAccessAction, updateUserManagementAction } from "@/server/actions/admin-actions";
 
 export default async function AdminUsersPage() {
   await requireAdmin();
@@ -14,6 +14,7 @@ export default async function AdminUsersPage() {
     name: string;
     email: string;
     role: string;
+    status: string;
     subscriptions: { courseId: string; course: { title: string } }[];
   }[] = [];
 
@@ -24,6 +25,7 @@ export default async function AdminUsersPage() {
         name: true,
         email: true,
         role: true,
+        status: true,
         subscriptions: { where: { status: "ACTIVE" }, select: { courseId: true, course: { select: { title: true } } } },
       },
       orderBy: { createdAt: "desc" },
@@ -42,7 +44,7 @@ export default async function AdminUsersPage() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-slate-600">
-                {user.email} - {user.role}
+                {user.email} - {user.role} - {user.status}
               </p>
               <p className="mt-2 text-xs text-slate-500">
                 Acessos:{" "}
@@ -64,6 +66,22 @@ export default async function AdminUsersPage() {
                   ))}
                 </select>
                 <Button variant="secondary">Liberar acesso</Button>
+              </form>
+              <form action={updateUserManagementAction} className="mt-3 flex flex-col gap-2 sm:flex-row">
+                <input type="hidden" name="userId" value={user.id} />
+                <select name="role" defaultValue={user.role} className="h-10 rounded-md border border-slate-200 bg-white px-3 text-sm">
+                  <option value="STUDENT">STUDENT</option>
+                  <option value="ADMIN">ADMIN</option>
+                </select>
+                <select
+                  name="status"
+                  defaultValue={user.status}
+                  className="h-10 rounded-md border border-slate-200 bg-white px-3 text-sm"
+                >
+                  <option value="ACTIVE">ACTIVE</option>
+                  <option value="BLOCKED">BLOCKED</option>
+                </select>
+                <Button>Salvar usuario</Button>
               </form>
             </CardContent>
           </Card>

@@ -91,10 +91,12 @@ Validacoes realizadas:
   - [ ] CRUD completo com edicao detalhada, exclusao segura e validacoes visuais.
   - [x] Criacao administrativa basica de perguntas de quiz.
   - [x] Criacao administrativa basica de flashcards.
-  - [ ] CRUD completo de quizzes com edicao/exclusao.
-  - [ ] CRUD completo de flashcards com edicao/exclusao.
-  - [ ] Gestao completa de usuarios, roles e acessos.
-  - [ ] Gestao de pagamentos e certificados.
+  - [x] Exclusao administrativa de perguntas de quiz.
+  - [x] Exclusao administrativa de flashcards.
+  - [x] Gestao de usuarios com role/status e liberacao manual.
+  - [x] Gestao operacional de pagamentos, webhooks e certificados.
+  - [ ] CRUD completo de quizzes com edicao.
+  - [ ] CRUD completo de flashcards com edicao.
 
 - [ ] Fase 8 - IA/RAG e busca semantica
   - [x] Schema com pgvector preparado.
@@ -123,7 +125,8 @@ Validacoes realizadas:
   - [x] Criar icone PWA inicial.
   - [x] Criar navegacao mobile para aluno/admin.
   - [ ] Fazer auditoria Lighthouse.
-  - [ ] Completar estados de loading, erro e vazio.
+  - [x] Completar estados de loading principais.
+  - [ ] Completar estados de erro e vazio em toda a aplicacao.
   - [x] Refinar experiencia mobile base.
 
 ## Entregue
@@ -142,6 +145,7 @@ Validacoes realizadas:
 - [x] Paginas de trilhas, flashcards, revisoes, simulados e certificados.
 - [x] Pagina publica de validacao de certificado.
 - [x] Painel admin inicial.
+- [x] Painel admin com operacao de usuarios, quizzes, flashcards, pagamentos e certificados.
 - [x] Importacao administrativa de cursos completos via JSON + Markdown.
 - [x] Arquivos versionados de conteudo em `content/ai-courses/`.
 - [x] Script `npm run import:ai-courses` para importar cursos gerados por IA.
@@ -176,6 +180,8 @@ Validacoes realizadas:
 - [x] Preencher Google Ads com 3 modulos e 6 aulas praticas.
 - [x] Preencher Meta/Facebook Ads com 3 modulos e 6 aulas praticas.
 - [ ] Implementar CRUD completo no painel admin.
+- [x] Implementar operacao administrativa central do painel.
+- [ ] Implementar edicao completa de quizzes/flashcards e exclusoes adicionais.
 - [ ] Validar payload e assinatura reais da Kiwify.
 - [x] Implementar liberacao automatica de cursos apos compra aprovada.
 - [ ] Configurar provedor de email transacional.

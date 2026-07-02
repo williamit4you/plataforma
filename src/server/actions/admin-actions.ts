@@ -35,6 +35,32 @@ export async function grantAccessAction(formData: FormData) {
   revalidatePath("/admin/users");
 }
 
+const userManagementSchema = z.object({
+  userId: z.string(),
+  role: z.enum(["STUDENT", "ADMIN"]),
+  status: z.enum(["ACTIVE", "BLOCKED"]),
+});
+
+export async function updateUserManagementAction(formData: FormData) {
+  const admin = await requireAdmin();
+  const parsed = userManagementSchema.safeParse(Object.fromEntries(formData));
+  if (!parsed.success) return;
+
+  await prisma.user.update({
+    where: { id: parsed.data.userId },
+    data: {
+      role: parsed.data.role,
+      status: parsed.data.status,
+    },
+  });
+
+  await prisma.adminLog.create({
+    data: { userId: admin.id, action: "UPDATE_USER_MANAGEMENT", metadata: parsed.data },
+  });
+
+  revalidatePath("/admin/users");
+}
+
 const courseSchema = z.object({
   title: z.string().min(3),
   description: z.string().min(10),
@@ -213,6 +239,23 @@ export async function createQuizQuestionAction(formData: FormData) {
   revalidatePath("/admin/quizzes");
 }
 
+const deleteQuestionSchema = z.object({
+  questionId: z.string().min(1),
+});
+
+export async function deleteQuizQuestionAction(formData: FormData) {
+  const admin = await requireAdmin();
+  const parsed = deleteQuestionSchema.safeParse(Object.fromEntries(formData));
+  if (!parsed.success) return;
+
+  await prisma.question.delete({ where: { id: parsed.data.questionId } });
+  await prisma.adminLog.create({
+    data: { userId: admin.id, action: "DELETE_QUIZ_QUESTION", metadata: parsed.data },
+  });
+
+  revalidatePath("/admin/quizzes");
+}
+
 const flashcardSchema = z.object({
   lessonId: z.string().min(1),
   front: z.string().min(3),
@@ -236,6 +279,23 @@ export async function createFlashcardAction(formData: FormData) {
 
   await prisma.adminLog.create({
     data: { userId: admin.id, action: "CREATE_FLASHCARD", metadata: { lessonId: parsed.data.lessonId } },
+  });
+
+  revalidatePath("/admin/flashcards");
+}
+
+const deleteFlashcardSchema = z.object({
+  flashcardId: z.string().min(1),
+});
+
+export async function deleteFlashcardAction(formData: FormData) {
+  const admin = await requireAdmin();
+  const parsed = deleteFlashcardSchema.safeParse(Object.fromEntries(formData));
+  if (!parsed.success) return;
+
+  await prisma.flashcard.delete({ where: { id: parsed.data.flashcardId } });
+  await prisma.adminLog.create({
+    data: { userId: admin.id, action: "DELETE_FLASHCARD", metadata: parsed.data },
   });
 
   revalidatePath("/admin/flashcards");
