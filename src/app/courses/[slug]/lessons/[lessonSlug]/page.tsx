@@ -6,6 +6,7 @@ import { LessonStudyView } from "@/components/lesson/lesson-study-view";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { LessonQuizForm } from "@/components/quiz/lesson-quiz-form";
 import { splitMarkdownSections } from "@/lib/lesson-content";
 import { getLesson } from "@/lib/learning";
 import { requireUser } from "@/lib/permissions";
@@ -99,21 +100,8 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
             <CardHeader>
               <CardTitle>Quiz rapido</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              {data.quizzes.flatMap((quiz) => quiz.questions).map((question) => (
-                <div key={question.id} className="rounded-md bg-slate-50 p-3">
-                  <p className="text-sm font-medium text-slate-950">{question.prompt}</p>
-                  <div className="mt-2 space-y-1">
-                    {question.answers.map((answer) => (
-                      <p key={answer.id} className="text-xs text-slate-500">
-                        {answer.isCorrect ? "Correta: " : ""}
-                        {answer.text}
-                      </p>
-                    ))}
-                  </div>
-                  <p className="mt-2 text-xs text-slate-500">{question.explanation}</p>
-                </div>
-              ))}
+            <CardContent>
+              <LessonQuizForm courseSlug={slug} lessonSlug={lessonSlug} quizzes={data.quizzes} />
             </CardContent>
           </Card>
           <Card>

@@ -106,3 +106,19 @@ select {
   color: inherit;
   padding: 0;
 }
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .no-print {
+    display: none;
+  }
+
+  .certificate-sheet {
+    max-width: none;
+    min-height: 90vh;
+    box-shadow: none;
+  }
+}

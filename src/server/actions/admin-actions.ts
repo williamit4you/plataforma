@@ -5,6 +5,7 @@ import { z } from "zod";
 import { requireAdmin } from "@/lib/permissions";
 import { prisma } from "@/lib/prisma";
 import { slugify } from "@/lib/utils";
+import { rebuildContentChunks } from "@/server/services/content-indexer";
 import { importAiCoursePayload } from "@/server/services/course-importer";
 
 const accessSchema = z.object({
@@ -159,8 +160,83 @@ export async function importAiCourseAction(formData: FormData) {
   const rawPayload = String(formData.get("payload") ?? "");
   const json = JSON.parse(rawPayload) as unknown;
   await importAiCoursePayload(prisma, json, { adminUserId: admin.id });
+  await rebuildContentChunks(prisma);
 
   revalidatePath("/admin/import");
   revalidatePath("/admin/courses");
   revalidatePath("/courses");
+}
+
+const quizQuestionSchema = z.object({
+  lessonId: z.string().min(1),
+  title: z.string().min(3).default("Quiz rapido"),
+  prompt: z.string().min(5),
+  explanation: z.string().min(3),
+  answers: z.string().min(5),
+});
+
+export async function createQuizQuestionAction(formData: FormData) {
+  const admin = await requireAdmin();
+  const parsed = quizQuestionSchema.safeParse(Object.fromEntries(formData));
+  if (!parsed.success) return;
+
+  const answerLines = parsed.data.answers
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  const answers = answerLines.map((line) => ({
+    text: line.replace(/^\*\s*/, ""),
+    isCorrect: line.startsWith("*"),
+  }));
+
+  if (answers.length < 2 || !answers.some((answer) => answer.isCorrect)) return;
+
+  const existingQuiz = await prisma.quiz.findFirst({
+    where: { lessonId: parsed.data.lessonId, title: parsed.data.title },
+  });
+  const quiz = existingQuiz ?? (await prisma.quiz.create({ data: { lessonId: parsed.data.lessonId, title: parsed.data.title } }));
+
+  await prisma.question.create({
+    data: {
+      quizId: quiz.id,
+      prompt: parsed.data.prompt,
+      explanation: parsed.data.explanation,
+      answers: { create: answers },
+    },
+  });
+
+  await prisma.adminLog.create({
+    data: { userId: admin.id, action: "CREATE_QUIZ_QUESTION", metadata: { lessonId: parsed.data.lessonId } },
+  });
+
+  revalidatePath("/admin/quizzes");
+}
+
+const flashcardSchema = z.object({
+  lessonId: z.string().min(1),
+  front: z.string().min(3),
+  back: z.string().min(3),
+  difficulty: z.string().min(2).default("BASIC"),
+});
+
+export async function createFlashcardAction(formData: FormData) {
+  const admin = await requireAdmin();
+  const parsed = flashcardSchema.safeParse(Object.fromEntries(formData));
+  if (!parsed.success) return;
+
+  await prisma.flashcard.create({
+    data: {
+      lessonId: parsed.data.lessonId,
+      front: parsed.data.front,
+      back: parsed.data.back,
+      difficulty: parsed.data.difficulty,
+    },
+  });
+
+  await prisma.adminLog.create({
+    data: { userId: admin.id, action: "CREATE_FLASHCARD", metadata: { lessonId: parsed.data.lessonId } },
+  });
+
+  revalidatePath("/admin/flashcards");
 }

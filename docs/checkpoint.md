@@ -52,7 +52,8 @@ Validacoes realizadas:
   - [x] Server action base de revisao criada.
   - [x] Persistir revisoes de flashcards com IDs reais do banco.
   - [x] Exibir historico real de revisoes.
-  - [ ] Persistir respostas de quiz.
+  - [x] Persistir respostas/tentativas de quiz.
+  - [x] Gerar XP por quiz respondido.
   - [ ] Implementar algoritmo mais robusto de repeticao espacada.
 
 - [ ] Fase 5 - Certificados
@@ -62,7 +63,7 @@ Validacoes realizadas:
   - [x] Emitir certificado real somente com 100% de conclusao.
   - [x] Buscar certificado real pelo codigo publico.
   - [x] Exibir aluno, curso, codigo, data e QR Code na validacao publica.
-  - [ ] Criar layout visual final do certificado para impressao/PDF.
+  - [x] Criar layout visual final do certificado para impressao/PDF.
 
 - [ ] Fase 6 - Kiwify webhook e acessos
   - [x] Endpoint `/api/webhooks/kiwify` criado.
@@ -88,8 +89,10 @@ Validacoes realizadas:
 - [x] Curso Meta Ads para Afiliados e Produtos Fisicos criado em JSON e importado no banco real.
   - [x] Liberacao manual de acesso por usuario.
   - [ ] CRUD completo com edicao detalhada, exclusao segura e validacoes visuais.
-  - [ ] CRUD completo de quizzes.
-  - [ ] CRUD completo de flashcards.
+  - [x] Criacao administrativa basica de perguntas de quiz.
+  - [x] Criacao administrativa basica de flashcards.
+  - [ ] CRUD completo de quizzes com edicao/exclusao.
+  - [ ] CRUD completo de flashcards com edicao/exclusao.
   - [ ] Gestao completa de usuarios, roles e acessos.
   - [ ] Gestao de pagamentos e certificados.
 
@@ -97,11 +100,14 @@ Validacoes realizadas:
   - [x] Schema com pgvector preparado.
   - [x] Endpoint de IA criado.
   - [x] Endpoint de busca base criado.
-  - [ ] Gerar embeddings reais.
-  - [ ] Implementar chunking de conteudo.
-  - [ ] Implementar busca vetorial.
+  - [x] Implementar chunking de conteudo em `content_chunks`.
+  - [x] Script `npm run rag:index` criado.
+  - [x] Busca consulta chunks reais do banco e retorna fontes.
+  - [x] Endpoint de IA consulta chunks reais e retorna fontes consultadas.
+  - [x] Reindexacao automatica apos importacao de curso por IA.
+  - [ ] Gerar embeddings reais com modelo externo.
+  - [ ] Implementar busca vetorial com embeddings.
   - [ ] Chamar modelo de IA real.
-  - [ ] Retornar fontes reais consultadas.
 
 - [ ] Fase 9 - Gamificacao
   - [x] Schema de XP/conquistas/streak criado.
@@ -109,15 +115,16 @@ Validacoes realizadas:
   - [x] Persistir XP real por conclusao de aula, revisao de flashcard e certificado.
   - [x] Implementar conquista inicial de primeira aula.
   - [x] Implementar streak persistente.
-  - [ ] Implementar niveis.
+  - [x] Implementar niveis por XP.
   - [ ] Implementar conjunto completo de conquistas.
 
 - [ ] Fase 10 - PWA e acabamento
   - [x] Manifest criado.
-  - [ ] Criar icones finais.
+  - [x] Criar icone PWA inicial.
+  - [x] Criar navegacao mobile para aluno/admin.
   - [ ] Fazer auditoria Lighthouse.
   - [ ] Completar estados de loading, erro e vazio.
-  - [ ] Refinar experiencia mobile.
+  - [x] Refinar experiencia mobile base.
 
 ## Entregue
 
@@ -140,6 +147,7 @@ Validacoes realizadas:
 - [x] Script `npm run import:ai-courses` para importar cursos gerados por IA.
 - [x] API de busca.
 - [x] API de IA com contrato preparado para RAG.
+- [x] Indexacao de chunks reais para busca/IA.
 - [x] API de webhook Kiwify.
 - [x] Prisma schema amplo.
 - [x] Migration inicial com pgvector.
@@ -159,7 +167,7 @@ Validacoes realizadas:
 - [ ] Validar login real no Easypanel apos novo deploy.
 - [ ] Validar fluxo de cadastro/login usando banco real no ambiente hospedado.
 - [x] Conectar progresso, flashcards e certificados ao banco.
-- [ ] Conectar tentativas/respostas de quiz ao banco.
+- [x] Conectar tentativas/respostas de quiz ao banco.
 - [x] Implementar CRUD basico real de cursos, modulos e aulas no painel admin.
 - [x] Implementar importador de cursos completos gerados por IA.
 - [x] Preencher Google Ads com 3 modulos e 6 aulas praticas.
@@ -170,6 +178,7 @@ Validacoes realizadas:
 - [ ] Configurar provedor de email transacional.
 - [ ] Configurar storage de imagens: Cloudflare R2 ou Supabase Storage.
 - [ ] Implementar RAG real com embeddings, chunking, busca vetorial e fontes.
+- [x] Implementar RAG inicial com chunking e fontes reais sem embeddings externos.
 - [ ] Criar testes automatizados para auth, webhook, progresso e certificados.
 - [ ] Fazer auditoria mobile/PWA.
 

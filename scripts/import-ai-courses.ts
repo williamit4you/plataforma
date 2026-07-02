@@ -1,6 +1,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { PrismaClient } from "@prisma/client";
+import { rebuildContentChunks } from "../src/server/services/content-indexer";
 import { importAiCoursePayload } from "../src/server/services/course-importer";
 
 const prisma = new PrismaClient();
@@ -17,6 +18,8 @@ async function main() {
     const result = await importAiCoursePayload(prisma, payload);
     console.log(`Imported ${result.courseSlug}: ${result.modules} modules, ${result.lessons} lessons`);
   }
+  const indexResult = await rebuildContentChunks(prisma);
+  console.log(`Indexed ${indexResult.chunks} chunks from ${indexResult.lessons} lessons`);
 }
 
 main()

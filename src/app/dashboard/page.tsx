@@ -2,6 +2,8 @@ import { Award, BookOpen, Brain, Flame } from "lucide-react";
 import { AppShell } from "@/components/layout/app-shell";
 import { CourseCard } from "@/components/course/course-card";
 import { Card, CardContent } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import { getLevelFromXp } from "@/lib/gamification";
 import { calculateCourseProgress, getCourses } from "@/lib/learning";
 import { prisma } from "@/lib/prisma";
 import { requireUser } from "@/lib/permissions";
@@ -33,6 +35,7 @@ export default async function DashboardPage() {
       streak = studyStreak?.currentDays ?? 0;
     } catch {}
   }
+  const level = getLevelFromXp(xp);
 
   return (
     <AppShell>
@@ -61,6 +64,21 @@ export default async function DashboardPage() {
       <p className="mt-4 text-sm text-slate-600">
         Aulas concluidas: {completedLessons} - Sequencia atual: {streak} dia(s)
       </p>
+      <Card className="mt-4">
+        <CardContent className="pt-5">
+          <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
+            <div>
+              <p className="text-sm font-medium text-slate-500">Nivel {level.level}</p>
+              <p className="text-sm text-slate-600">
+                {xp} XP acumulados - proximo nivel em {level.nextLevelBase} XP
+              </p>
+            </div>
+            <div className="w-full sm:w-72">
+              <Progress value={level.progress} />
+            </div>
+          </div>
+        </CardContent>
+      </Card>
       <h2 className="mt-8 text-xl font-semibold text-slate-950">Seus cursos</h2>
       <div className="mt-4 grid gap-4 md:grid-cols-2">
         {courses.map((course) => (

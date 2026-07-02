@@ -17,6 +17,8 @@ const adminLinks = [
   { href: "/admin/users", label: "Usuarios", icon: LayoutDashboard },
   { href: "/admin/courses", label: "Cursos", icon: BookOpen },
   { href: "/admin/import", label: "Importar IA", icon: Upload },
+  { href: "/admin/quizzes", label: "Quizzes", icon: Search },
+  { href: "/admin/flashcards", label: "Flashcards", icon: Brain },
   { href: "/admin/payments", label: "Pagamentos", icon: CreditCard },
 ];
 
@@ -50,6 +52,26 @@ export async function AppShell({ children, admin = false }: { children: React.Re
         </div>
       </aside>
       <main className="lg:pl-64">
+        <div className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 px-4 py-3 backdrop-blur lg:hidden">
+          <Link href="/" className="mb-3 flex items-center gap-2 font-semibold text-slate-950">
+            <span className="flex h-8 w-8 items-center justify-center rounded-md bg-teal-600 text-white">
+              <BookOpen size={16} />
+            </span>
+            Ads Academy
+          </Link>
+          <nav className="flex gap-2 overflow-x-auto pb-1">
+            {links.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="flex shrink-0 items-center gap-2 rounded-md border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700"
+              >
+                <item.icon size={15} />
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">{children}</div>
       </main>
     </div>

@@ -39,6 +39,7 @@ model User {
   payments       Payment[]
   certificates   Certificate[]
   flashReviews   FlashcardReview[]
+  quizAttempts    QuizAttempt[]
   xpEvents       XpEvent[]
   achievements   UserAchievement[]
   aiThreads      AiThread[]
@@ -150,6 +151,7 @@ model Quiz {
   title     String
   lesson    Lesson?    @relation(fields: [lessonId], references: [id], onDelete: Cascade)
   questions Question[]
+  attempts  QuizAttempt[]
   createdAt DateTime   @default(now())
 }
 
@@ -168,6 +170,18 @@ model Answer {
   text       String
   isCorrect  Boolean  @default(false)
   question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+}
+
+model QuizAttempt {
+  id        String   @id @default(cuid())
+  userId    String
+  quizId    String
+  score     Int
+  total     Int
+  answers   Json
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  quiz      Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
 }
 
 model Flashcard {
