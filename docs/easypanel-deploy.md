@@ -32,6 +32,8 @@ DATABASE_URL=
 NEXTAUTH_URL=
 NEXTAUTH_SECRET=
 KIWIFY_WEBHOOK_SECRET=
+ADMIN_SEED_EMAIL=
+ADMIN_SEED_PASSWORD=
 ```
 
 ## Variaveis opcionais por fase
@@ -50,6 +52,7 @@ R2_PUBLIC_URL=
 
 - O `NEXTAUTH_URL` deve usar o dominio final em producao.
 - Gere `NEXTAUTH_SECRET` com valor forte.
+- Use `ADMIN_SEED_EMAIL` e `ADMIN_SEED_PASSWORD` apenas como variaveis de ambiente, nunca hardcoded no Git.
 - Antes de usar RAG, confirme se o PostgreSQL tem `pgvector` habilitado.
 - Para webhooks, cadastre no painel da Kiwify a URL final:
 

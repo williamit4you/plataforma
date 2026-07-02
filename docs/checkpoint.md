@@ -29,55 +29,62 @@ Validacoes realizadas:
   - [x] Migration inicial criada.
   - [x] Auth.js configurado.
   - [x] Roles `STUDENT` e `ADMIN` configuradas.
-  - [ ] Aplicar migration no banco real.
-  - [ ] Rodar seed no banco real.
-  - [ ] Testar fluxo completo com banco remoto.
+  - [x] Aplicar migration no banco real.
+  - [x] Rodar seed no banco real.
+  - [x] Admin seed configurado com `willianbarata@gmail.com`.
+  - [ ] Testar login real no ambiente hospedado apos subir as alteracoes no Git.
 
 - [ ] Fase 3 - Cursos, modulos, aulas e progresso
   - [x] Rotas e telas de cursos criadas.
   - [x] Conteudo mockado/fallback funcionando.
   - [x] Pagina de aula com Markdown criada.
   - [x] Acao base para concluir aula criada.
-  - [ ] Conectar toda leitura/escrita ao banco.
-  - [ ] Restringir cursos por assinatura/acesso real.
-  - [ ] Calcular progresso real por aula, modulo e curso.
+  - [x] Conectar leitura de cursos, modulos, aulas, quizzes e flashcards ao banco real.
+  - [x] Conectar conclusao de aula ao banco real.
+  - [x] Restringir cursos por assinatura/acesso real para alunos.
+  - [x] Calcular progresso real por aula, modulo e curso.
 
 - [ ] Fase 4 - Quizzes, flashcards e revisao inteligente
   - [x] UI base de quiz criada.
   - [x] UI base de flashcards criada.
   - [x] Server action base de revisao criada.
+  - [x] Persistir revisoes de flashcards com IDs reais do banco.
+  - [x] Exibir historico real de revisoes.
   - [ ] Persistir respostas de quiz.
-  - [ ] Persistir revisoes de flashcards com IDs reais do banco.
   - [ ] Implementar algoritmo mais robusto de repeticao espacada.
 
 - [ ] Fase 5 - Certificados
   - [x] Pagina publica de certificado criada.
   - [x] Estrutura de certificado no schema criada.
   - [x] QR Code preparado.
-  - [ ] Emitir certificado real somente com 100% de conclusao.
-  - [ ] Criar layout final do certificado.
-  - [ ] Buscar certificado real pelo codigo publico.
+  - [x] Emitir certificado real somente com 100% de conclusao.
+  - [x] Buscar certificado real pelo codigo publico.
+  - [x] Exibir aluno, curso, codigo, data e QR Code na validacao publica.
+  - [ ] Criar layout visual final do certificado para impressao/PDF.
 
 - [ ] Fase 6 - Kiwify webhook e acessos
   - [x] Endpoint `/api/webhooks/kiwify` criado.
   - [x] Validacao simples criada.
   - [x] Idempotencia base criada.
-  - [ ] Validar assinatura real da Kiwify.
-  - [ ] Mapear payload oficial da Kiwify.
-  - [ ] Criar/localizar usuario via webhook.
-  - [ ] Registrar pagamento real.
-  - [ ] Liberar cursos automaticamente apos compra aprovada.
+  - [x] Criar/localizar usuario via webhook.
+  - [x] Registrar pagamento real.
+  - [x] Liberar cursos automaticamente apos compra aprovada.
+  - [x] Ignorar eventos nao aprovados.
+  - [ ] Validar assinatura real da Kiwify com documentacao/payload oficial.
+  - [ ] Mapear payload oficial da Kiwify em producao.
 
 - [ ] Fase 7 - Painel administrativo
   - [x] Rotas admin criadas.
   - [x] Middleware de admin criado.
   - [x] Dashboard admin inicial criado.
-  - [ ] CRUD completo de cursos.
-  - [ ] CRUD completo de modulos.
-  - [ ] CRUD completo de aulas.
+  - [x] Criacao/atualizacao basica de cursos.
+  - [x] Criacao/atualizacao basica de modulos.
+  - [x] Criacao/atualizacao basica de aulas em Markdown.
+  - [x] Liberacao manual de acesso por usuario.
+  - [ ] CRUD completo com edicao detalhada, exclusao segura e validacoes visuais.
   - [ ] CRUD completo de quizzes.
   - [ ] CRUD completo de flashcards.
-  - [ ] Gestao completa de usuarios e acessos.
+  - [ ] Gestao completa de usuarios, roles e acessos.
   - [ ] Gestao de pagamentos e certificados.
 
 - [ ] Fase 8 - IA/RAG e busca semantica
@@ -93,10 +100,11 @@ Validacoes realizadas:
 - [ ] Fase 9 - Gamificacao
   - [x] Schema de XP/conquistas/streak criado.
   - [x] Cards de XP/streak no dashboard criados.
-  - [ ] Persistir XP real por evento.
+  - [x] Persistir XP real por conclusao de aula, revisao de flashcard e certificado.
+  - [x] Implementar conquista inicial de primeira aula.
+  - [x] Implementar streak persistente.
   - [ ] Implementar niveis.
-  - [ ] Implementar conquistas.
-  - [ ] Implementar streak persistente.
+  - [ ] Implementar conjunto completo de conquistas.
 
 - [ ] Fase 10 - PWA e acabamento
   - [x] Manifest criado.
@@ -132,15 +140,19 @@ Validacoes realizadas:
 ## Pendencias criticas antes de producao
 
 - [ ] Configurar `.env` real fora do Git.
-- [ ] Aplicar migration no PostgreSQL real.
-- [ ] Rodar seed no banco real.
-- [ ] Confirmar se o banco tem permissao para `CREATE EXTENSION vector`.
-- [ ] Trocar a senha inicial do admin.
-- [ ] Validar fluxo de cadastro/login usando banco real.
-- [ ] Conectar progresso, quizzes, flashcards e certificados 100% ao banco.
-- [ ] Implementar CRUD real no painel admin.
+- [x] Aplicar migration no PostgreSQL real.
+- [x] Rodar seed no banco real.
+- [x] Confirmar se o banco tem permissao para `CREATE EXTENSION vector`.
+- [x] Remover senha fixa `admin123` do seed.
+- [x] Criar/atualizar admin real com email `willianbarata@gmail.com`.
+- [ ] Validar login real no Easypanel apos novo deploy.
+- [ ] Validar fluxo de cadastro/login usando banco real no ambiente hospedado.
+- [x] Conectar progresso, flashcards e certificados ao banco.
+- [ ] Conectar tentativas/respostas de quiz ao banco.
+- [x] Implementar CRUD basico real de cursos, modulos e aulas no painel admin.
+- [ ] Implementar CRUD completo no painel admin.
 - [ ] Validar payload e assinatura reais da Kiwify.
-- [ ] Implementar liberacao automatica de cursos apos compra aprovada.
+- [x] Implementar liberacao automatica de cursos apos compra aprovada.
 - [ ] Configurar provedor de email transacional.
 - [ ] Configurar storage de imagens: Cloudflare R2 ou Supabase Storage.
 - [ ] Implementar RAG real com embeddings, chunking, busca vetorial e fontes.

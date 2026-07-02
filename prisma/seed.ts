@@ -5,14 +5,26 @@ import { courses, flashcards, lessons, quizzes, slugify } from "./seed-data";
 const prisma = new PrismaClient();
 
 async function main() {
-  const passwordHash = await bcrypt.hash("admin123", 12);
+  const adminEmail = process.env.ADMIN_SEED_EMAIL ?? "willianbarata@gmail.com";
+  const adminPassword = process.env.ADMIN_SEED_PASSWORD;
+
+  if (!adminPassword) {
+    throw new Error("ADMIN_SEED_PASSWORD is required to seed the admin user.");
+  }
+
+  const passwordHash = await bcrypt.hash(adminPassword, 12);
 
   await prisma.user.upsert({
-    where: { email: "admin@adsacademy.local" },
-    update: {},
+    where: { email: adminEmail },
+    update: {
+      name: "Willian Barata",
+      passwordHash,
+      role: "ADMIN",
+      status: "ACTIVE",
+    },
     create: {
-      name: "Admin Ads Academy",
-      email: "admin@adsacademy.local",
+      name: "Willian Barata",
+      email: adminEmail,
       passwordHash,
       role: "ADMIN",
     },
@@ -77,34 +89,46 @@ async function main() {
           },
         });
 
-        const quiz = await prisma.quiz.create({
-          data: {
-            lessonId: lesson.id,
-            title: `Quiz - ${lessonData.title}`,
-            questions: {
-              create: quizzes.map((quizItem) => ({
-                prompt: quizItem.question,
-                explanation: "A resposta correta reforca a tomada de decisao baseada em dados.",
-                answers: {
-                  create: quizItem.answers.map((answer, index) => ({
-                    text: answer,
-                    isCorrect: index === quizItem.correct,
-                  })),
-                },
-              })),
-            },
-          },
+        const existingQuiz = await prisma.quiz.findFirst({
+          where: { lessonId: lesson.id, title: `Quiz - ${lessonData.title}` },
         });
-        void quiz;
 
-        await prisma.flashcard.createMany({
-          data: flashcards.map((card) => ({
-            lessonId: lesson.id,
-            front: card.front,
-            back: card.back,
-          })),
-          skipDuplicates: true,
-        });
+        if (!existingQuiz) {
+          await prisma.quiz.create({
+            data: {
+              lessonId: lesson.id,
+              title: `Quiz - ${lessonData.title}`,
+              questions: {
+                create: quizzes.map((quizItem) => ({
+                  prompt: quizItem.question,
+                  explanation: "A resposta correta reforca a tomada de decisao baseada em dados.",
+                  answers: {
+                    create: quizItem.answers.map((answer, index) => ({
+                      text: answer,
+                      isCorrect: index === quizItem.correct,
+                    })),
+                  },
+                })),
+              },
+            },
+          });
+        }
+
+        for (const card of flashcards) {
+          const existingCard = await prisma.flashcard.findFirst({
+            where: { lessonId: lesson.id, front: card.front },
+          });
+
+          if (!existingCard) {
+            await prisma.flashcard.create({
+              data: {
+                lessonId: lesson.id,
+                front: card.front,
+                back: card.back,
+              },
+            });
+          }
+        }
       }
     }
   }
