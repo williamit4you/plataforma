@@ -22,8 +22,9 @@ Nao coloque a URL real do banco em arquivos versionados.
 6. Configure a porta publica como `3000`.
 7. Adicione as variaveis de ambiente.
 8. Execute o primeiro deploy.
-9. Rode as migrations do Prisma.
-10. Configure dominio e HTTPS.
+9. O Dockerfile roda `npm run prisma:deploy` automaticamente antes de iniciar o Next.js.
+10. Se `ADMIN_SEED_PASSWORD` estiver configurado, o Dockerfile tambem roda `npm run db:seed` no startup.
+11. Configure dominio e HTTPS.
 
 ## Variaveis obrigatorias
 
@@ -54,6 +55,9 @@ R2_PUBLIC_URL=
 - Gere `NEXTAUTH_SECRET` com valor forte.
 - Use `ADMIN_SEED_EMAIL` e `ADMIN_SEED_PASSWORD` apenas como variaveis de ambiente, nunca hardcoded no Git.
 - Antes de usar RAG, confirme se o PostgreSQL tem `pgvector` habilitado.
+- Se aparecer erro `The table public.Course does not exist`, o app esta apontando para um banco sem migrations ou o `DATABASE_URL` esta incorreto. Confirme que `DATABASE_URL` e uma URL PostgreSQL, nao a URL do site.
+- O formato correto e `postgres://usuario:senha@host:porta/banco?sslmode=disable`.
+- Para criar o admin automaticamente no startup, configure `ADMIN_SEED_EMAIL` e `ADMIN_SEED_PASSWORD` no Easypanel.
 - Para webhooks, cadastre no painel da Kiwify a URL final:
 
 ```txt

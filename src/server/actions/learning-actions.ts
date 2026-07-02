@@ -30,6 +30,7 @@ export async function completeLessonAction(formData: FormData) {
   const user = await requireUser();
   const lessonId = String(formData.get("lessonId") ?? "");
   const courseSlug = String(formData.get("courseSlug") ?? "");
+  if (!process.env.DATABASE_URL || lessonId.startsWith("mock-")) return;
 
   try {
     const existingProgress = await prisma.progress.findUnique({
@@ -75,8 +76,12 @@ export async function reviewFlashcardAction(formData: FormData) {
   const user = await requireUser();
   const parsed = reviewSchema.safeParse(Object.fromEntries(formData));
   if (!parsed.success) return;
+  if (!process.env.DATABASE_URL || parsed.data.flashcardId.startsWith("mock-")) return;
 
   try {
+    const flashcard = await prisma.flashcard.findUnique({ where: { id: parsed.data.flashcardId } });
+    if (!flashcard) return;
+
     await prisma.flashcardReview.create({
       data: {
         userId: user.id,

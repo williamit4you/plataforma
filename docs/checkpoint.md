@@ -153,12 +153,15 @@ Validacoes realizadas:
 - [x] Migration inicial com pgvector.
 - [x] Seed inicial com admin, cursos, modulos, aulas, quizzes e flashcards.
 - [x] Dockerfile, docker-compose, `.gitignore`, `.dockerignore` e `.env.example`.
+- [x] Dockerfile configurado para aplicar migrations automaticamente no startup do container.
+- [x] Dockerfile configurado para rodar seed automaticamente quando `ADMIN_SEED_PASSWORD` existir.
 - [x] Documentacao de arquitetura e deploy Easypanel.
 - [x] Documentacao do formato de importacao em `docs/ai-course-import-format.md`.
 
 ## Pendencias criticas antes de producao
 
 - [ ] Configurar `.env` real fora do Git.
+- [ ] Confirmar no Easypanel se `DATABASE_URL` aponta para PostgreSQL, nao para a URL do site.
 - [x] Aplicar migration no PostgreSQL real.
 - [x] Rodar seed no banco real.
 - [x] Confirmar se o banco tem permissao para `CREATE EXTENSION vector`.
